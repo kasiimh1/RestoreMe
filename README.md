@@ -15,3 +15,9 @@ Other devices to be added in a future update
 3) Test on macOS and Linux
 
 When checkm8 and/or Futurerestore allow for downgrades on blackbird vulerable devices (bypassing SEP and with working Baseband Support on iPhones. iPod's and iPad's don't have a baseband unless they're cellular) them firmwares will be added for supported devices
+
+#Thanks to the following 
+
+https://github.com/libimobiledevice/libimobiledevice
+https://github.com/tihmstar/futurerestore
+https://www.theiphonewiki.com/wiki/Firmware
