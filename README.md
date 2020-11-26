@@ -19,5 +19,7 @@ When checkm8 and/or Futurerestore allow for downgrades on blackbird vulerable de
 #Thanks to the following 
 
 https://github.com/libimobiledevice/libimobiledevice
+
 https://github.com/tihmstar/futurerestore
+
 https://www.theiphonewiki.com/wiki/Firmware
