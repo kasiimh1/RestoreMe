@@ -1,0 +1,68 @@
+{
+    "Devices": {
+        "iPhone11,2": {
+            "Firmwares": [
+                {
+                    "14.0": [
+                        {
+                            "IPSW": "https://updates.cdn-apple.com/2020SummerFCS/fullrestores/001-46850/8A4DA7D0-40E1-4079-A159-5B0983102B66/iPhone11,2,iPhone11,4,iPhone11,6,iPhone12,3,iPhone12,5_14.0_18A373_Restore.ipsw",
+                            "SEP": "Firmware/all_flash/sep-firmware.d321.RELEASE.im4p",
+                            "Baseband": "Firmware/ICE18-3.00.01.Release.bbfw"
+                        }
+                    ],
+                    "14.0.1": [
+                        {
+                            "IPSW": "https://updates.cdn-apple.com/2020SummerFCS/fullrestores/001-50347/70300CF7-57F4-4469-8DE5-4C36310594B9/iPhone11,2,iPhone11,4,iPhone11,6,iPhone12,3,iPhone12,5_14.0.1_18A393_Restore.ipsw",
+                            "SEP": "Firmware/all_flash/sep-firmware.d321.RELEASE.im4p",
+                            "Baseband": "Firmware/ICE18-3.00.01.Release.bbfw"
+                        }
+                    ],
+                    "14.1": [
+                        {
+                            "IPSW": "https://updates.cdn-apple.com/2020SummerFCS/fullrestores/001-56818/6B759F96-8259-4644-92A0-771C9E21E965/iPhone11,2,iPhone11,6,iPhone12,3,iPhone12,5_14.1_18A8395_Restore.ipsw",
+                            "SEP": "Firmware/all_flash/sep-firmware.d321.RELEASE.im4p",
+                            "Baseband": "Firmware/ICE18-3.00.01.Release.bbfw"
+                        }
+                    ],
+                    "14.2": [
+                        {
+                            "IPSW": "https://updates.cdn-apple.com/2020FallFCS/fullrestores/001-74658/96D473B0-9ADD-4A40-8DB3-38892C812FDE/iPhone11,2,iPhone11,4,iPhone11,6,iPhone12,3,iPhone12,5_14.2_18B92_Restore.ipsw",
+                            "SEP": "Firmware/all_flash/sep-firmware.d321.RELEASE.im4p",
+                            "Baseband": "Firmware/ICE18-3.01.01.Release.bbfw"
+                        }
+                    ]
+                }
+            ]
+        },
+        "iPad7,3": {
+            "Firmwares": [
+                {
+                    "14.0": [
+                        {
+                            "IPSW": "https://updates.cdn-apple.com/2020SummerFCS/fullrestores/001-46692/7721F50D-6126-4BDE-8063-E9060336DEA2/iPad_Fall_2018_14.0_18A373_Restore.ipsw",
+                            "SEP": "Firmware/all_flash/sep-firmware.j207.RELEASE.im4p"
+                        }
+                    ],
+                    "14.0.1": [
+                        {
+                            "IPSW": "https://updates.cdn-apple.com/2020SummerFCS/fullrestores/001-50370/CF5D1CCC-7728-47D5-A7B2-66D6BC279406/iPad_Pro_HFR_14.0.1_18A393_Restore.ipsw",
+                            "SEP": "Firmware/all_flash/sep-firmware.j207.RELEASE.im4p"
+                        }
+                    ],
+                    "14.1": [
+                        {
+                            "IPSW": "https://updates.cdn-apple.com/2020SummerFCS/fullrestores/001-56481/5B201C79-B853-4498-9B84-3E56ECF6CB35/iPad_Pro_HFR_14.1_18A8395_Restore.ipsw",
+                            "SEP": "Firmware/all_flash/sep-firmware.j207.RELEASE.im4p"
+                        }
+                    ],
+                    "14.2": [
+                        {
+                            "IPSW": "https://updates.cdn-apple.com/2020FallFCS/fullrestores/001-73951/AD2152C3-1D8C-48A7-86A8-A0DD998075D9/iPad_Pro_HFR_14.2_18B92_Restore.ipsw",
+                            "SEP": "Firmware/all_flash/sep-firmware.j207.RELEASE.im4p"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
