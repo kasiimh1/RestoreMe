@@ -107,6 +107,7 @@ def restoreFileFetch(product, signed, homePath):
             
 parser = argparse.ArgumentParser(description='RestoreMe: FutureRestore Helper Util by Kasiimh1')
 parser.add_argument('-p', help='Set Custom Save Path for Downloaded Files', default=os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop//RestoreMe'))
+#parser.add_argument('-u', help='Set Update paramater, to keep user data, do not perform FDR', action='store_true')
 parser.add_argument('-t', help='Set SHSH ticket used for the restore')
 parser.add_argument('-l', help='Set program to print all info', action='store_true')
 args = parser.parse_args()
@@ -155,23 +156,26 @@ sep = glob.glob(os.path.join(args.p + "/Firmware/all_flash", f'sep-firmware.*.RE
 baseband = glob.glob(os.path.join(args.p + "/Firmware" , f'*.Release.bbfw'))
 ipsw = args.p + "/" + product + "_" + version + ".ipsw"
 
-if args.t == None:
-    args.t = input("Enter path to SHSH Ticket for the device you wish to restore")
-if product.find("iPad") == True:
-    print("[*] No Baseband set, adding no-baseband flag to the restore")
-proceed = input("No Baseband provided, Continue with the Restore (fine for iPod and iPad) ? y/n: ").lower().strip()
-
 if platform == "Windows":
     fr = "futurerestore.exe"
 if platform != "Windows":
     fr = "futurerestore"
 
-if proceed == 'y':
-    print("[DEBUG] futurerestore.exe -w -t %s " %args.t + "-m %s " %buildManifest + "-p %s " %buildManifest + "-s %s " %sep[0] + "--no-baseband")
-    os.system("%s" %fr + " -w -t %s " %args.t + "-m %s " %buildManifest + "-p %s " %buildManifest + "-s %s " %sep[0] + "--no-baseband")
-if proceed == 'n':
-    print("User didn't wish to proceed with the restore, Exiting")
-    sys.exit(-1)
+if args.t == None:
+    args.t = input("Enter path to SHSH Ticket for the device you wish to restore: ")
+if product.find("iPad") == 0:
+    print("[*] No Baseband set, adding no-baseband flag to the restore")
+    proceed = input("No Baseband provided, Continue with the Restore (fine for iPod and iPad) ? y/n: ").lower().strip()
+    if proceed == 'y':
+            cmd = "%s" %fr + " -t %s " %args.t + "-m %s " %buildManifest + "-p %s " %buildManifest + "-s %s " %sep[0] + "--no-baseband " + "%s " %ipsw
+            if args.l:
+                print("[DEBUG] %s " %cmd)
+            os.system(cmd)
+    if proceed == 'n':
+        print("User didn't wish to proceed with the restore, Exiting")
+        sys.exit(-1)
 else:
-    print("[DEBUG] futurerestore.exe -w -t %s " %args.t + "-m %s " %buildManifest + "-p %s " %buildManifest + "-s %s " %sep[0] + "-b %s " %baseband)
-    os.system("%s" %fr + " -w -t %s " %args.t + "-m %s " %buildManifest + "-p %s " %buildManifest + "-s %s " %sep[0] + "-b %s " %baseband)
+    if args.l:
+        cmd = "%s" %fr + " -t %s " %args.t + "-m %s " %buildManifest + "-p %s " %buildManifest + "-s %s " %sep[0] + "-b %s " %baseband  + "%s " %ipsw
+        print("[DEBUG] %s " %cmd)
+        os.system(cmd) 

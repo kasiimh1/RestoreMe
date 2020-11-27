@@ -55,6 +55,12 @@
                             "SEP": "Firmware/all_flash/sep-firmware.j207.RELEASE.im4p"
                         }
                     ],
+                    "14.2": [
+                        {
+                            "IPSW": "https://updates.cdn-apple.com/2020FallFCS/fullrestores/001-73951/AD2152C3-1D8C-48A7-86A8-A0DD998075D9/iPad_Pro_HFR_14.2_18B92_Restore.ipsw",
+                            "SEP": "Firmware/all_flash/sep-firmware.j207.RELEASE.im4p"
+                        }
+                    ],
                     "13.4": [
                         {
                             "IPSW": "https://updates.cdn-apple.com/2020WinterFCS/fullrestores/041-42746/822C5A69-8459-4488-A0C0-E8B903C3E206/iPad_Pro_HFR_13.4_17E255_Restore.ipsw",
