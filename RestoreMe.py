@@ -13,8 +13,11 @@ else:
 
 os.chdir(bundle_dir + '/SupportFiles/')
 
-with open('devices.json') as json_file:
-    data = json.load(json_file)
+req = requests.get("https://gist.githubusercontent.com/kasiimh1/ee3473505ac89a30d57d515a9e05b680/raw/edc9f3c280a8c325db49232aed70dc5a6995eaf3/devices.json")
+print("-- Requesting Devices.json From Remote --")
+if req.status_code == 200:
+    print("-- Success Code %s " %req.status_code + ", Got Devices.json --")
+    data = json.loads(req.text)
 
 def download(url, path, version, product, log):
     try:
@@ -105,6 +108,10 @@ def restoreFileFetch(product, signed, homePath):
         except:
             print("\n-- Device does not have a baseband.. fine if device is an iPad/iPod --\n")
             
+# def loadContainerEnv():
+#     print(os.system("docker system prune -a y"))
+#     print(os.system("docker pull numbski/futurerestore:latest"))
+
 parser = argparse.ArgumentParser(description='RestoreMe: FutureRestore Helper Util by Kasiimh1')
 parser.add_argument('-p', help='Set Custom Save Path for Downloaded Files', default=os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop//RestoreMe'))
 parser.add_argument('-d', help='Download Restore Files Only', action='store_true')
