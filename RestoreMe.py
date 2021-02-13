@@ -13,21 +13,22 @@ else:
 
 os.chdir(bundle_dir + '/SupportFiles/')
 
-req = requests.get("https://gist.githubusercontent.com/kasiimh1/ee3473505ac89a30d57d515a9e05b680/raw/edc9f3c280a8c325db49232aed70dc5a6995eaf3/devices.json")
+req = requests.get("https://raw.githubusercontent.com/kasiimh1/RestoreMe/main/devices.json")
 print("-- Requesting Devices.json From Remote --")
 if req.status_code == 200:
     print("-- Success Code %s " %req.status_code + ", Got Devices.json --")
     data = json.loads(req.text)
 
 def download(url, path, version, product, log):
-    try:
-        os.mkdir(path)
-    except OSError:
-        if log:
-            print ("\nCreation of the directory %s failed (might already exist)" % path)
-    else:
-        if log:
-            print ("\nSuccessfully created the directory %s " % path)
+    file = os.path.expanduser(path)
+    if os.path.isdir(file) is False:
+        try:
+            os.mkdir(path)
+        except FileExistsError:
+            if log:
+                print ("\nCreation of the directory %s failed (might already exist)" % path)
+            else:
+                print ("\nSuccessfully created the directory %s " % path)
 
     ipsw = path + "/" + product + "_" + version + ".ipsw"
     if not os.path.isfile(ipsw):
@@ -91,7 +92,7 @@ def signedVersionChecker(model, version, log):
 def deviceLookup(product, version):
     try:
         if data['Devices'][product]['Firmwares'][0][version] != None:
-            print("\n-- IPSW found for you version, downloading --\n ", data['Devices'][product]['Firmwares'][0][version][0]['IPSW'])
+            print("\n-- IPSW found for your version, downloading --\n ", data['Devices'][product]['Firmwares'][0][version][0]['IPSW'])
             return(str(data['Devices'][product]['Firmwares'][0][version][0]['IPSW']))
         else:
             print("\n-- No IPSW found for your version --")
@@ -108,12 +109,11 @@ def restoreFileFetch(product, signed, homePath):
         except:
             print("\n-- Device does not have a baseband.. fine if device is an iPad/iPod --\n")
             
-# def loadContainerEnv():
-#     print(os.system("docker system prune -a y"))
-#     print(os.system("docker pull numbski/futurerestore:latest"))
-
 parser = argparse.ArgumentParser(description='RestoreMe: FutureRestore Helper Util by Kasiimh1')
-parser.add_argument('-p', help='Set Custom Save Path for Downloaded Files', default=os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop//RestoreMe'))
+if platform != "Windows":
+    parser.add_argument('-p', help='Set Custom Save Path for Downloaded Files', default=os.path.expanduser('~/Desktop/RestoreMe'))
+if platform == "Windows":
+    parser.add_argument('-p', help='Set Custom Save Path for Downloaded Files', default=os.path.join(os.path.join(os.environ['USERPROFILE']), 'Desktop/RestoreMe'))
 parser.add_argument('-d', help='Download Restore Files Only', action='store_true')
 parser.add_argument('-e', help='Exit Recovery Mode', action='store_true')
 parser.add_argument('-u', help='Set Update paramater, to keep user data, do not perform FDR', action='store_true')
@@ -167,11 +167,11 @@ if args.l:
 version = input("[*] enter iOS version you will be futurerestoring to: ")
 signed = signedVersionChecker(product, version, args.l)
 download(deviceLookup(product, version), args.p, version, product, args.l)
-restoreFileFetch(product, signed, args.p)
+restoreFileFetch(product, signed, args.p + '/Files/')
 
-buildManifest = args.p + "/BuildManifest.plist"
-sep = glob.glob(os.path.join(args.p + "/Firmware/all_flash", f'sep-firmware.*.RELEASE.im4p'))
-baseband = glob.glob(os.path.join(args.p + "/Firmware" , f'*.Release.bbfw'))
+buildManifest = args.p + "/Files/BuildManifest.plist"
+sep = glob.glob(os.path.join(args.p + "/Files/Firmware/all_flash", f'sep-firmware.*.RELEASE.im4p'))
+baseband = glob.glob(os.path.join(args.p + "/Files/Firmware" , f'*.Release.bbfw'))
 ipsw = args.p + "/" + product + "_" + version + ".ipsw"
 
 if args.d != None:
