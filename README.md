@@ -20,7 +20,8 @@ When checkm8 and/or Futurerestore allow for downgrades on blackbird vulerable de
 1) Compile futurerestore 
 2) Compile libimobiledevice
 3) place in SupportFiles
-4) compile with something like auto-py-to-exe or something similar or run with `python RestoreMe.py`
+4) Install python libs `pip3 / pip install -r requirements.txt`
+5) compile with something like auto-py-to-exe or something similar or run with `python RestoreMe.py`
 
 ## Thanks to the following 
 
