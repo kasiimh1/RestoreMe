@@ -1,5 +1,7 @@
 Place your FutureRestore binary here with the following name 'futurerestore'
 
-GET FROM: https://github.com/marijuanARM/futurerestore/releases/tag/v189
+GET FROM: https://github.com/marijuanARM/futurerestore/releases/tag/v189 for < A13
+
+GET FROM: https://github.com/marijuanARM/futurerestore/tree/a13/a14 for > A12
 
 THEY ARE TWO DIFFERENT BINARIES for A13+ and <A13
