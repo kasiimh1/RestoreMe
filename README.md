@@ -29,4 +29,6 @@ https://github.com/libimobiledevice/libimobiledevice
 
 https://github.com/tihmstar/futurerestore
 
+https://github.com/marijuanARM/futurerestore
+
 https://www.theiphonewiki.com/wiki/Firmware
