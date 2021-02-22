@@ -1,0 +1,390 @@
+kasiim@Kasims-iMac RestoreMe % /usr/local/opt/python@3.9/bin/python3.9 /Users/kasiim/Documents/GitHub/RestoreMe/RestoreMe.py -u
+-- Requesting Devices.json From Remote --
+-- Success Code 200 , Got Devices.json --
+
+RestoreMe v1.0 by Kasiimh1
+
+[*] Press ENTER when Device is connected > 
+ideviceenterrecovery xxxx
+Telling device with udid xxxx to enter recovery mode.
+Device is successfully switching to recovery mode.
+[*] enter iOS version you will be futurerestoring to: 14.3
+-- Server Response --
+[V] iOS 14.4 is currently being signed for the: iPad7,3
+
+-- IPSW found for your version, downloading --
+  http://updates-http.cdn-apple.com/2020WinterFCS/fullrestores/001-87129/CA174A5D-BE6C-4A89-B38E-521296755974/iPad_Pro_HFR_14.3_18C66_Restore.ipsw
+
+Downloading, SEP, Baseband and Buildmanifest
+
+-- Device does not have a baseband.. fine if device is an iPad/iPod --
+
+Enter path to SHSH Ticket for the device you wish to restore: '/Users/kasiim/Desktop/RestoreMe/xxxxxx_iPad7,3_j207ap_14.3-18C66_27325c8258be46e69d9ee57fa9a8fbc28b873df434e5e702a8b27999551138ae.shsh2'
+[*] No Baseband set, adding no-baseband flag to the restore
+No Baseband provided, Continue with the Restore (fine for iPod and iPad) ? y/n: y
+Update Parameter Set Not Performing FDR, Continue ? y/n: y
+Version: de444ceee137537615a36b53aa7c7e58d2b7c21d - 191
+img4tool version: 0.197-aca6cf005c94caf135023263cbb5c61a0081804f
+Odysseus support: no
+INFO: device serial number is xxxxx
+[INFO] 64-bit device detected
+futurerestore init done
+reading signing ticket /Users/kasiim/Desktop/RestoreMe/xxxxxx_iPad7,3_j207ap_14.3-18C66_27325c8258be46e69d9ee57fa9a8fbc28b873df434e5e702a8b27999551138ae.shsh2 is done
+[TSSC] opening /Users/kasiim/Desktop/RestoreMe/Files/BuildManifest.plist
+[TSSR] Checking BuildIdentity 0
+[TSSR] Checking BuildIdentity 1
+[TSSR] Checking BuildIdentity 2
+[TSSR] Selected BuildIdentity for request
+[TSSR] User specified to not request a baseband ticket.
+Request URL set to https://gs.apple.com/TSS/controller?action=2
+Sending TSS request attempt 1... response successfully received
+
+WARNING: user specified is not to flash a baseband. This can make the restore fail if the device needs a baseband!
+if you added this flag by mistake, you can press CTRL-C now to cancel
+continuing restore in 10 9 8 7 6 5 4 3 2 1 
+Found device in Recovery mode
+Device already in recovery mode
+Found device in Recovery mode
+Identified device as j207ap, iPad7,3
+Extracting BuildManifest from iPSW
+Product version: 14.3
+Product build: 18C66 Major: 18
+Device supports Image4: true
+Got ApNonce from device: 27 32 5c 82 58 be 46 e6 9d 9e e5 7f a9 a8 fb c2 8b 87 3d f4 34 e5 e7 02 a8 b2 79 99 55 11 38 ae 
+[TSSR] Checking BuildIdentity 0
+[TSSR] Checking BuildIdentity 1
+[TSSR] Checking BuildIdentity 2
+[TSSR] Checking BuildIdentity 3
+[TSSR] Checking BuildIdentity 4
+[TSSR] Checking BuildIdentity 5
+[TSSR] Checking BuildIdentity 6
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Checking BuildIdentity 1
+[TSSR] Checking BuildIdentity 2
+[TSSR] Checking BuildIdentity 3
+[TSSR] Checking BuildIdentity 4
+[TSSR] Checking BuildIdentity 5
+[TSSR] Checking BuildIdentity 6
+[TSSR] Selected BuildIdentity for request
+checking APTicket to be valid for this restore...
+Verified ECID in APTicket matches device ECID
+checking APTicket to be valid for this restore...
+Verified ECID in APTicket matches device ECID
+[IMG4TOOL] checking buildidentity 0:
+[IMG4TOOL] checking buildidentity matches board ... NO
+[IMG4TOOL] checking buildidentity 1:
+[IMG4TOOL] checking buildidentity matches board ... NO
+[IMG4TOOL] checking buildidentity 2:
+[IMG4TOOL] checking buildidentity matches board ... YES
+[IMG4TOOL] checking buildidentity has all required hashes:
+[IMG4TOOL] checking hash for "AOP"                     OK (untrusted)
+[IMG4TOOL] checking hash for "Ap,SystemVolumeCanonicalMetadata"OK (found "msys" with matching hash)
+[IMG4TOOL] checking hash for "AppleLogo"               OK (found "logo" with matching hash)
+[IMG4TOOL] checking hash for "BatteryCharging0"        OK (found "chg0" with matching hash)
+[IMG4TOOL] checking hash for "BatteryCharging1"        OK (found "chg1" with matching hash)
+[IMG4TOOL] checking hash for "BatteryFull"             OK (found "batF" with matching hash)
+[IMG4TOOL] checking hash for "BatteryLow0"             OK (found "bat0" with matching hash)
+[IMG4TOOL] checking hash for "BatteryLow1"             OK (found "bat1" with matching hash)
+[IMG4TOOL] checking hash for "BatteryPlugin"           OK (found "glyP" with matching hash)
+[IMG4TOOL] checking hash for "DeviceTree"              OK (found "dtre" with matching hash)
+[IMG4TOOL] checking hash for "KernelCache"             OK (found "krnl" with matching hash)
+[IMG4TOOL] checking hash for "LLB"                     OK (found "illb" with matching hash)
+[IMG4TOOL] checking hash for "OS"                      OK (found "rosi" with matching hash)
+[IMG4TOOL] checking hash for "RecoveryMode"            OK (found "recm" with matching hash)
+[IMG4TOOL] checking hash for "RestoreDeviceTree"       OK (found "rdtr" with matching hash)
+[IMG4TOOL] checking hash for "RestoreKernelCache"      OK (found "rkrn" with matching hash)
+[IMG4TOOL] checking hash for "RestoreLogo"             OK (found "rlgo" with matching hash)
+[IMG4TOOL] checking hash for "RestoreRamDisk"          BAD! (hash not found in im4m)
+[IMG4TOOL] checking hash for "RestoreSEP"              OK (found "rsep" with matching hash)
+[IMG4TOOL] checking hash for "RestoreTrustCache"       BAD! (hash not found in im4m)
+[IMG4TOOL] checking hash for "SEP"                     OK (found "sepi" with matching hash)
+[IMG4TOOL] checking hash for "StaticTrustCache"        OK (found "trst" with matching hash)
+[IMG4TOOL] checking hash for "SystemVolume"            OK (found "isys" with matching hash)
+[IMG4TOOL] checking hash for "ftap"                    IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "ftsp"                    IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "iBEC"                    OK (found "ibec" with matching hash)
+[IMG4TOOL] checking hash for "iBSS"                    OK (found "ibss" with matching hash)
+[IMG4TOOL] checking hash for "iBoot"                   OK (found "ibot" with matching hash)
+[IMG4TOOL] checking hash for "rfta"                    IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "rfts"                    IGN (no digest in BuildManifest)
+
+failed verification with error:
+[exception]:
+what=verification failed!
+code=84279308
+line=1286
+file=img4tool.cpp
+commit count=197:
+commit sha  =aca6cf005c94caf135023263cbb5c61a0081804f:
+[IMG4TOOL] checking buildidentity 3:
+[IMG4TOOL] checking buildidentity matches board ... NO
+[IMG4TOOL] checking buildidentity 4:
+[IMG4TOOL] checking buildidentity matches board ... NO
+[IMG4TOOL] checking buildidentity 5:
+[IMG4TOOL] checking buildidentity matches board ... NO
+[IMG4TOOL] checking buildidentity 6:
+[IMG4TOOL] checking buildidentity matches board ... YES
+[IMG4TOOL] checking buildidentity has all required hashes:
+[IMG4TOOL] checking hash for "AOP"                     OK (untrusted)
+[IMG4TOOL] checking hash for "Ap,SystemVolumeCanonicalMetadata"OK (found "msys" with matching hash)
+[IMG4TOOL] checking hash for "AppleLogo"               OK (found "logo" with matching hash)
+[IMG4TOOL] checking hash for "BatteryCharging0"        OK (found "chg0" with matching hash)
+[IMG4TOOL] checking hash for "BatteryCharging1"        OK (found "chg1" with matching hash)
+[IMG4TOOL] checking hash for "BatteryFull"             OK (found "batF" with matching hash)
+[IMG4TOOL] checking hash for "BatteryLow0"             OK (found "bat0" with matching hash)
+[IMG4TOOL] checking hash for "BatteryLow1"             OK (found "bat1" with matching hash)
+[IMG4TOOL] checking hash for "BatteryPlugin"           OK (found "glyP" with matching hash)
+[IMG4TOOL] checking hash for "DeviceTree"              OK (found "dtre" with matching hash)
+[IMG4TOOL] checking hash for "KernelCache"             OK (found "krnl" with matching hash)
+[IMG4TOOL] checking hash for "LLB"                     OK (found "illb" with matching hash)
+[IMG4TOOL] checking hash for "OS"                      OK (found "rosi" with matching hash)
+[IMG4TOOL] checking hash for "RecoveryMode"            OK (found "recm" with matching hash)
+[IMG4TOOL] checking hash for "RestoreDeviceTree"       OK (found "rdtr" with matching hash)
+[IMG4TOOL] checking hash for "RestoreKernelCache"      OK (found "rkrn" with matching hash)
+[IMG4TOOL] checking hash for "RestoreLogo"             OK (found "rlgo" with matching hash)
+[IMG4TOOL] checking hash for "RestoreRamDisk"          OK (found "rdsk" with matching hash)
+[IMG4TOOL] checking hash for "RestoreSEP"              OK (found "rsep" with matching hash)
+[IMG4TOOL] checking hash for "RestoreTrustCache"       OK (found "rtsc" with matching hash)
+[IMG4TOOL] checking hash for "SEP"                     OK (found "sepi" with matching hash)
+[IMG4TOOL] checking hash for "StaticTrustCache"        OK (found "trst" with matching hash)
+[IMG4TOOL] checking hash for "SystemVolume"            OK (found "isys" with matching hash)
+[IMG4TOOL] checking hash for "ftap"                    IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "ftsp"                    IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "iBEC"                    OK (found "ibec" with matching hash)
+[IMG4TOOL] checking hash for "iBSS"                    OK (found "ibss" with matching hash)
+[IMG4TOOL] checking hash for "iBoot"                   OK (found "ibot" with matching hash)
+[IMG4TOOL] checking hash for "rfta"                    IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "rfts"                    IGN (no digest in BuildManifest)
+Verified APTicket to be valid for this restore
+Variant: Customer Upgrade Install (IPSW)
+This restore will update your device without erasing user data.
+Extracting filesystem from iPSW
+[==================================================] 100.0%
+Extracting iBEC.j207.RELEASE.im4p...
+Personalizing IMG4 component iBEC...
+Sending iBEC (552300 bytes)...
+waiting for device to reconnect... Getting SepNonce in recovery mode... 4e 19 48 86 fa b4 9e ae a3 06 57 41 47 aa 65 fa 50 25 3b 62 
+Getting ApNonce in recovery mode... 27 32 5c 82 58 be 46 e6 9d 9e e5 7f a9 a8 fb c2 8b 87 3d f4 34 e5 e7 02 a8 b2 79 99 55 11 38 ae 
+[WARNING] Setting bgcolor to green! If you don't see a green screen, then your device didn't boot iBEC correctly
+Recovery Mode Environment:
+iBoot build-version=iBoot-6723.62.3
+iBoot build-style=RELEASE
+Sending RestoreLogo...
+Extracting applelogo@2224~ipad.im4p...
+Personalizing IMG4 component RestoreLogo...
+Sending RestoreLogo (28192 bytes)...
+ramdisk-size=0x20000000
+Extracting 038-82966-083.dmg...
+Personalizing IMG4 component RestoreRamDisk...
+Sending RestoreRamDisk (107209195 bytes)...
+Extracting 038-82966-083.dmg.trustcache...
+Personalizing IMG4 component RestoreTrustCache...
+Sending RestoreTrustCache (11603 bytes)...
+Extracting DeviceTree.j207ap.im4p...
+Personalizing IMG4 component RestoreDeviceTree...
+Sending RestoreDeviceTree (41204 bytes)...
+Extracting kernelcache.release.ipad7...
+Personalizing IMG4 component RestoreKernelCache...
+Sending RestoreKernelCache (15248444 bytes)...
+getting SEP ticket
+Trying to fetch new SHSH blob
+Request URL set to https://gs.apple.com/TSS/controller?action=2
+Sending TSS request attempt 1... response successfully received
+Received SHSH blobs
+About to restore device... 
+Connecting now...
+Connected to com.apple.mobile.restored, version 15
+Device ffffffffffffffffffffffffffffffff00000005 has successfully entered restore mode
+Hardware Information:
+BoardID: 4
+ChipID: xxxx
+UniqueChipID: xxxxx
+ProductionMode: true
+Starting FDR listener thread
+About to send RootTicket...
+Sending RootTicket now...
+Done sending RootTicket
+Waiting for NAND (28)
+Updating NAND Firmware (58)
+About to send NORData...
+Found firmware path Firmware/all_flash
+Getting firmware manifest from build identity
+Extracting LLB.j207.RELEASE.im4p...
+Personalizing IMG4 component LLB...
+Extracting applelogo@2224~ipad.im4p...
+Personalizing IMG4 component AppleLogo...
+Extracting batterycharging0@2224~ipad.im4p...
+Personalizing IMG4 component BatteryCharging0...
+Extracting batterycharging1@2224~ipad.im4p...
+Personalizing IMG4 component BatteryCharging1...
+Extracting batteryfull@2224~ipad.im4p...
+Personalizing IMG4 component BatteryFull...
+Extracting batterylow0@2224~ipad.im4p...
+Personalizing IMG4 component BatteryLow0...
+Extracting batterylow1@2224~ipad.im4p...
+Personalizing IMG4 component BatteryLow1...
+Extracting glyphplugin@2224~ipad-lightning.im4p...
+Personalizing IMG4 component BatteryPlugin...
+Extracting DeviceTree.j207ap.im4p...
+Personalizing IMG4 component DeviceTree...
+Extracting recoverymode@2224~ipad-lightning.im4p...
+Personalizing IMG4 component RecoveryMode...
+Extracting iBoot.j207.RELEASE.im4p...
+Personalizing IMG4 component iBoot...
+Personalizing IMG4 component RestoreSEP...
+Personalizing IMG4 component SEP...
+Sending NORData now...
+Done sending NORData
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Checking filesystems (15)
+About to send FDR Trust data...
+Sending FDR Trust data now...
+Done sending FDR Trust Data
+Checking for uncollected logs (44)
+Checking for uncollected logs (44)
+ERROR: Unable to receive message from FDR 0x7fc8fedfd090 (-2). 0/2 bytes
+ERROR: Unable to receive message from FDR 0x7fc8fedfd130 (-2). 0/2 bytes
+ERROR: Unable to receive message from FDR 0x7fc8fece6900 (-2). 0/2 bytes
+ERROR: Unable to receive message from FDR 0x7fc8fedfd060 (-2). 0/2 bytes
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Creating filesystem (12)
+About to send filesystem...
+Connected to ASR
+Validating the filesystem
+Filesystem validated
+Sending filesystem now...
+[==================================================] 100.0%
+Done sending filesystem
+Verifying restore (14)
+[==================================================] 100.0%
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Checking filesystems (15)
+Checking filesystems (15)
+Checking filesystems (15)
+Checking filesystems (15)
+Checking filesystems (15)
+Mounting filesystems (16)
+Mounting filesystems (16)
+Mounting filesystems (16)
+Unknown operation (80)
+Sending IsiBootEANFirmware image list
+Sending IsiBootNonEssentialFirmware image list
+Flashing firmware (18)
+[==================================================] 100.0%
+Unknown operation (80)
+Sending IsEarlyAccessFirmware image list
+Sending IsiBootEANFirmware image list
+Sending IsiBootNonEssentialFirmware image list
+Requesting FUD data (36)
+Found IsFUDFirmware component AOP
+Found IsFUDFirmware component RestoreTrustCache
+Found IsFUDFirmware component StaticTrustCache
+Sending IsFUDFirmware image list
+Extracting aopfw-ipad7aop.im4p...
+Personalizing IMG4 component AOP...
+Sending IsFUDFirmware for AOP...
+Extracting 038-82966-083.dmg.trustcache...
+Personalizing IMG4 component RestoreTrustCache...
+Sending IsFUDFirmware for RestoreTrustCache...
+Extracting 038-83260-078.dmg.trustcache...
+Personalizing IMG4 component StaticTrustCache...
+Sending IsFUDFirmware for StaticTrustCache...
+Updating gas gauge software (47)
+Updating gas gauge software (47)
+Updating Stockholm (55)
+Requesting FUD data (36)
+Found IsFUDFirmware component AOP
+Found IsFUDFirmware component RestoreTrustCache
+Found IsFUDFirmware component StaticTrustCache
+Sending IsFUDFirmware image list
+Updating SE Firmware (59)
+Updating Veridian (66)
+Unknown operation (81)
+Creating Protected Volume (67)
+About to send KernelCache...
+Extracting kernelcache.release.ipad7...
+Personalizing IMG4 component KernelCache...
+Sending KernelCache now...
+Done sending KernelCache
+Installing kernelcache (27)
+About to send DeviceTree...
+Extracting DeviceTree.j207ap.im4p...
+Personalizing IMG4 component DeviceTree...
+Sending DeviceTree now...
+Done sending DeviceTree
+Installing DeviceTree (61)
+About to send NORData...
+Found firmware path Firmware/all_flash
+Getting firmware manifest from build identity
+Extracting LLB.j207.RELEASE.im4p...
+Personalizing IMG4 component LLB...
+Extracting applelogo@2224~ipad.im4p...
+Personalizing IMG4 component AppleLogo...
+Extracting batterycharging0@2224~ipad.im4p...
+Personalizing IMG4 component BatteryCharging0...
+Extracting batterycharging1@2224~ipad.im4p...
+Personalizing IMG4 component BatteryCharging1...
+Extracting batteryfull@2224~ipad.im4p...
+Personalizing IMG4 component BatteryFull...
+Extracting batterylow0@2224~ipad.im4p...
+Personalizing IMG4 component BatteryLow0...
+Extracting batterylow1@2224~ipad.im4p...
+Personalizing IMG4 component BatteryLow1...
+Extracting glyphplugin@2224~ipad-lightning.im4p...
+Personalizing IMG4 component BatteryPlugin...
+Extracting DeviceTree.j207ap.im4p...
+Personalizing IMG4 component DeviceTree...
+Extracting recoverymode@2224~ipad-lightning.im4p...
+Personalizing IMG4 component RecoveryMode...
+Extracting iBoot.j207.RELEASE.im4p...
+Personalizing IMG4 component iBoot...
+Personalizing IMG4 component RestoreSEP...
+Personalizing IMG4 component SEP...
+Sending NORData now...
+Done sending NORData
+About to send SystemImageRootHash...
+Extracting 038-83260-078.dmg.root_hash...
+Personalizing IMG4 component SystemVolume...
+Sending SystemImageRootHash now...
+Done sending SystemImageRootHash
+Fixing up /var (17)
+Modifying persistent boot-args (25)
+Requesting EAN Data (74)
+About to send SystemImageCanonicalMetadata...
+Extracting 038-83260-078.dmg.mtree...
+Personalizing IMG4 component Ap,SystemVolumeCanonicalMetadata...
+Sending SystemImageCanonicalMetadata now...
+Done sending SystemImageCanonicalMetadata
+About to send SystemImageRootHash...
+Extracting 038-83260-078.dmg.root_hash...
+Personalizing IMG4 component SystemVolume...
+Sending SystemImageRootHash now...
+Done sending SystemImageRootHash
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Got status message
+Status: Restore Finished
+Cleaning up...
+Done: restoring succeeded!
+kasiim@Kasims-iMac RestoreMe % 

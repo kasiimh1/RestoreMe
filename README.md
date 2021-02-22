@@ -8,11 +8,20 @@ iPad7,4 iOS 14+
 
 Other devices to be added in a future update
 
+## Usage
+
+  -h, --help  show this help message and exit
+  -p P        Set Custom Save Path for Downloaded Files
+  -d          Download Restore Files Only
+  -e          Exit Recovery Mode
+  -u          Set Update paramater, to keep user data, do not perform FDR
+  -t T        Set SHSH ticket used for the restore
+  -l          Set program to print all info
+
 ## Todo 
 
-1) Compile latest FutureRestore for Windows, macOS and Linux
-2) Build for macOS and Linux
-3) Test on macOS and Linux
+1) Build for Linux
+2) Test on Linux
 
 When checkm8 and/or Futurerestore allow for downgrades on blackbird vulerable devices (bypassing SEP and with working Baseband Support on iPhones. iPod's and iPad's don't have a baseband unless they're cellular) them firmwares will be added for supported devices
 

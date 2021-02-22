@@ -3,3 +3,6 @@ SupportFiles/*.dll
 __pycache__/RestoreMe.cpython-37.pyc
 .DS_Store
 .vscode/settings.json
+SupportFiles/futurerestore
+SupportFiles/ideviceinfo
+SupportFiles/ideviceenterrecovery
