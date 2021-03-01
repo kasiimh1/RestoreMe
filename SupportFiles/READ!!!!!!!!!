@@ -1,12 +1,4 @@
-Place your FutureRestore binary here with the following name 'futurerestore'
 
-GET FROM: https://github.com/marijuanARM/futurerestore/releases/tag/v189 for < A13
+Binary Used : https://github.com/marijuanARM/futurerestore/releases/tag/193 for < A14
 
-GET FROM: https://github.com/marijuanARM/futurerestore/tree/a13/a14 for > A12
-
-FutureRestore iOS Supported Firmwares:
-
-    Compatible with 14.0-14.5b2 on A10 and below.
-    Compatible with 14.3-14.5b2 on A11 and above.
-
-THEY ARE TWO DIFFERENT BINARIES for A13+ and <A13
+A14 Not Supported Currently
