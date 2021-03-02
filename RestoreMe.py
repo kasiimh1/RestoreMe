@@ -337,3 +337,5 @@ if args.r:
 
                 if args.l:
                     print("[DEBUG] %s " % cmd)
+else:
+    parser.print_help()
