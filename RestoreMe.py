@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 
 import sys
 import time
@@ -181,6 +180,7 @@ if platform == "Windows":
             os.path.join(os.environ["USERPROFILE"]), "Desktop/RestoreMe"
         ),
     )
+parser.add_argument("-c", help="Pair Device (fix lockdown errors)", action="store_true")
 parser.add_argument("-d", help="Download Restore Files Only", action="store_true")
 parser.add_argument("-e", help="Exit Recovery Mode", action="store_true")
 parser.add_argument(
@@ -189,6 +189,7 @@ parser.add_argument(
     action="store_true",
 )
 parser.add_argument("-t", help="Set SHSH ticket used for the restore")
+parser.add_argument("-r", help="Restore Device", action="store_true")
 parser.add_argument("-l", help="Set program to print all info", action="store_true")
 args = parser.parse_args()
 
@@ -203,122 +204,136 @@ if args.e:
     os.system(fr + " --exit-recovery")
     sys.exit(0)
 
-input("[*] Press ENTER when Device is connected > ")
+if args.c:
+    print("Trying To Establish Connection With Device")
+    if platform == "Windows":
+        try:         
+            os.system("idevicepair.exe pair")
+        except:
+            print("Unable To Pair Device")
 
-time.sleep(10)
+    if platform != "Windows":
+            try:         
+                os.system("idevicepair pair")
+            except:
+                print("Unable To Pair Device")
 
-if platform == "Windows":
-    try:
-        udid = deviceExtractionTool("ideviceinfo.exe", 16, "UniqueDeviceID: ", False)
-        ecid = deviceExtractionTool("ideviceinfo.exe", 13, "UniqueChipID: ", True)
-        platform = deviceExtractionTool(
-            "ideviceinfo.exe", 18, "HardwarePlatform: ", False
-        )
-        product = deviceExtractionTool("ideviceinfo.exe", 13, "ProductType: ", False)
-        user = deviceExtractionTool("ideviceinfo.exe", 12, "DeviceName: ", False)
-        boardid = deviceExtractionTool("ideviceinfo.exe", 15, "HardwareModel: ", False)
-        os.system("ideviceenterrecovery.exe", udid)
-    except:
-        print(
-            "Unabled to query device info, Connect Device again and run script again!"
-        )
-        sys.exit(-1)
+if args.r:
+    input("[*] Press ENTER when Device is connected > ")
 
-if platform != "Windows":
-    try:
-        udid = deviceExtractionTool("ideviceinfo", 16, "UniqueDeviceID: ", False)
-        ecid = deviceExtractionTool("ideviceinfo", 13, "UniqueChipID: ", True)
-        platform = deviceExtractionTool("ideviceinfo", 18, "HardwarePlatform: ", False)
-        product = deviceExtractionTool("ideviceinfo", 13, "ProductType: ", False)
-        user = deviceExtractionTool("ideviceinfo", 12, "DeviceName: ", False)
-        boardid = deviceExtractionTool("ideviceinfo", 15, "HardwareModel: ", False)
-        os.system("ideviceenterrecovery", udid)
-    except:
-        print(
-            "Unabled to query device info, Connect Device again and run script again!"
-        )
-        sys.exit(-1)
+    time.sleep(10)
 
-if args.l:
-    print("\n[*] Fetching Infromation From Device")
-    print("-- Device Information --")
-    print("[D] Found " + user)
-    print("[D] Device is:", product)
-    print("[D] BoardID is:", boardid)
-    print("[D] Found Device: UDID:", udid)
-    print("[D] ECID:", ecid)
-    print("[D] Device Platform:", platform)
-
-version = input("[*] enter iOS version you will be futurerestoring to: ")
-signed = signedVersionChecker(product, version, args.l)
-download(deviceLookup(product, version), args.p, version, product, args.l)
-restoreFileFetch(product, signed, args.p + "/Files/")
-
-buildManifest = args.p + "/Files/BuildManifest.plist"
-sep = glob.glob(
-    os.path.join(args.p + "/Files/Firmware/all_flash", f"sep-firmware.*.RELEASE.im4p")
-)
-baseband = glob.glob(os.path.join(args.p + "/Files/Firmware", f"*.Release.bbfw"))
-ipsw = args.p + "/" + product + "_" + version + ".ipsw"
-
-if args.d:
-    print("Downloaded Restore files to %s" % args.p)
-
-if args.d != None:
-    is_non_FDR = ""
-    if args.t == None:
-        args.t = input("Enter path to SHSH Ticket for the device you wish to restore: ")
-
-        if args.u:
-            isFRD = (
-                input("Update Parameter Set Not Performing FDR, Continue ? y/n: ")
-                .lower()
-                .strip()
+    if platform == "Windows":
+        try:
+            udid = deviceExtractionTool("ideviceinfo.exe", 16, "UniqueDeviceID: ", False)
+            ecid = deviceExtractionTool("ideviceinfo.exe", 13, "UniqueChipID: ", True)
+            platform = deviceExtractionTool("ideviceinfo.exe", 18, "HardwarePlatform: ", False)
+            product = deviceExtractionTool("ideviceinfo.exe", 13, "ProductType: ", False)
+            user = deviceExtractionTool("ideviceinfo.exe", 12, "DeviceName: ", False)
+            boardid = deviceExtractionTool("ideviceinfo.exe", 15, "HardwareModel: ", False)
+            os.system("ideviceenterrecovery.exe", udid)
+        except:
+            print(
+                "Unabled to query device info, Connect Device again and run script again!"
             )
-            if isFRD == "y":
-                is_non_FDR = "-u"
+            sys.exit(-1)
 
-        if product.find("iPad") == 0:
-            print("[*] No Baseband set, adding no-baseband flag to the restore")
-            proceed = (
-                input(
-                    "No Baseband provided, Continue with the Restore (fine for iPod and iPad) ? y/n: "
+    if platform != "Windows":
+        try:
+            udid = deviceExtractionTool("ideviceinfo", 16, "UniqueDeviceID: ", False)
+            ecid = deviceExtractionTool("ideviceinfo", 13, "UniqueChipID: ", True)
+            platform = deviceExtractionTool("ideviceinfo", 18, "HardwarePlatform: ", False)
+            product = deviceExtractionTool("ideviceinfo", 13, "ProductType: ", False)
+            user = deviceExtractionTool("ideviceinfo", 12, "DeviceName: ", False)
+            boardid = deviceExtractionTool("ideviceinfo", 15, "HardwareModel: ", False)
+            print(os.getcwd())
+            os.system("ideviceenterrecovery", udid)
+        except:
+            print(
+                "Unabled to query device info, Connect Device again and run script again!"
+            )
+            sys.exit(-1)
+
+    if args.l:
+        print("\n[*] Fetching Infromation From Device")
+        print("-- Device Information --")
+        print("[D] Found " + user)
+        print("[D] Device is:", product)
+        print("[D] BoardID is:", boardid)
+        print("[D] Found Device: UDID:", udid)
+        print("[D] ECID:", ecid)
+        print("[D] Device Platform:", platform)
+
+    version = input("[*] enter iOS version you will be futurerestoring to: ")
+    signed = signedVersionChecker(product, version, args.l)
+    download(deviceLookup(product, version), args.p, version, product, args.l)
+    restoreFileFetch(product, signed, args.p + "/Files/")
+
+    buildManifest = args.p + "/Files/BuildManifest.plist"
+    sep = glob.glob(
+        os.path.join(args.p + "/Files/Firmware/all_flash", f"sep-firmware.*.RELEASE.im4p")
+    )
+    baseband = glob.glob(os.path.join(args.p + "/Files/Firmware", f"*.Release.bbfw"))
+    ipsw = args.p + "/" + product + "_" + version + ".ipsw"
+
+    if args.d:
+        print("Downloaded Restore files to %s" % args.p)
+
+    if args.d != None:
+        is_non_FDR = ""
+        if args.t == None:
+            args.t = input("Enter path to SHSH Ticket for the device you wish to restore: ")
+
+            if args.u:
+                isFRD = (
+                    input("Update Parameter Set Not Performing FDR, Continue ? y/n: ")
+                    .lower()
+                    .strip()
                 )
-                .lower()
-                .strip()
-            )
+                if isFRD == "y":
+                    is_non_FDR = "-u"
 
-            if proceed == "y":
+            if product.find("iPad") == 0:
+                print("[*] No Baseband set, adding no-baseband flag to the restore")
+                proceed = (
+                    input(
+                        "No Baseband provided, Continue with the Restore (fine for iPod and iPad) ? y/n: "
+                    )
+                    .lower()
+                    .strip()
+                )
+
+                if proceed == "y":
+                    cmd = (
+                        "%s" % fr
+                        + " -t %s " % args.t
+                        + "-m %s " % buildManifest
+                        + "-p %s " % buildManifest
+                        + "-s %s " % sep[0]
+                        + "--no-baseband "
+                        + "%s " % ipsw
+                        + "%s" % is_non_FDR
+                    )
+                    if args.l:
+                        print("[DEBUG] %s " % cmd)
+                    os.system(cmd)
+
+                if proceed == "n":
+                    print("User didn't wish to proceed with the restore, Exiting")
+                    sys.exit(0)
+            else:
                 cmd = (
                     "%s" % fr
                     + " -t %s " % args.t
                     + "-m %s " % buildManifest
                     + "-p %s " % buildManifest
                     + "-s %s " % sep[0]
-                    + "--no-baseband "
+                    + "-b %s " % baseband[0]
                     + "%s " % ipsw
                     + "%s" % is_non_FDR
                 )
+                os.system(cmd)
+                print(cmd)
+
                 if args.l:
                     print("[DEBUG] %s " % cmd)
-                os.system(cmd)
-
-            if proceed == "n":
-                print("User didn't wish to proceed with the restore, Exiting")
-                sys.exit(-1)
-        else:
-            cmd = (
-                "%s" % fr
-                + " -t %s " % args.t
-                + "-m %s " % buildManifest
-                + "-p %s " % buildManifest
-                + "-s %s " % sep[0]
-                + "-b %s " % baseband[0]
-                + "%s " % ipsw
-                + "%s" % is_non_FDR
-            )
-            os.system(cmd)
-            print(cmd)
-
-            if args.l:
-                print("[DEBUG] %s " % cmd)
