@@ -193,7 +193,7 @@ parser.add_argument("-r", help="Restore Device", action="store_true")
 parser.add_argument("-l", help="Set program to print all info", action="store_true")
 args = parser.parse_args()
 
-print("\nRestoreMe v1.0 by Kasiimh1\n")
+print("\nRestoreMe v1.1 by Kasiimh1\n")
 
 if platform == "Windows":
     fr = "futurerestore.exe"
@@ -231,7 +231,7 @@ if args.r:
             product = deviceExtractionTool("ideviceinfo.exe", 13, "ProductType: ", False)
             user = deviceExtractionTool("ideviceinfo.exe", 12, "DeviceName: ", False)
             boardid = deviceExtractionTool("ideviceinfo.exe", 15, "HardwareModel: ", False)
-            os.system("ideviceenterrecovery.exe", udid)
+            os.system("ideviceenterrecovery.exe %s" %udid)
         except:
             print(
                 "Unabled to query device info, Connect Device again and run script again!"
@@ -245,9 +245,8 @@ if args.r:
             platform = deviceExtractionTool("ideviceinfo", 18, "HardwarePlatform: ", False)
             product = deviceExtractionTool("ideviceinfo", 13, "ProductType: ", False)
             user = deviceExtractionTool("ideviceinfo", 12, "DeviceName: ", False)
-            boardid = deviceExtractionTool("ideviceinfo", 15, "HardwareModel: ", False)
-            print(os.getcwd())
-            os.system("ideviceenterrecovery", udid)
+            boardid = deviceExtractionTool("ideviceinfo", 15, "HardwareModel: ", False)#
+            os.system("ideviceenterrecovery %s" %udid)
         except:
             print(
                 "Unabled to query device info, Connect Device again and run script again!"
@@ -279,9 +278,24 @@ if args.r:
     if args.d:
         print("Downloaded Restore files to %s" % args.p)
 
+    if platform == "Windows":
+        try:
+            os.system("ideviceenterrecovery.exe %s" %udid)
+        except:
+            print("Unabled to Enter Recovery Mode!")
+            sys.exit(-1)
+
+    if platform != "Windows":
+        try:
+            os.system("ideviceenterrecovery %s" %udid)
+        except:
+            print("Unabled to Enter Recovery Mode!")
+            sys.exit(-1)
+
     if args.d != None:
         is_non_FDR = ""
         if args.t == None:
+
             args.t = input("Enter path to SHSH Ticket for the device you wish to restore: ")
 
             if args.u:
@@ -316,7 +330,12 @@ if args.r:
                     )
                     if args.l:
                         print("[DEBUG] %s " % cmd)
-                    os.system(cmd)
+                    try:
+                        os.system(cmd)
+                    except:
+                        print("Unabled to Restore Device!")
+                        os.system(fr + " --exit-recovery")
+                        sys.exit(-1)
 
                 if proceed == "n":
                     print("User didn't wish to proceed with the restore, Exiting")
@@ -332,10 +351,14 @@ if args.r:
                     + "%s " % ipsw
                     + "%s" % is_non_FDR
                 )
-                os.system(cmd)
-                print(cmd)
-
                 if args.l:
                     print("[DEBUG] %s " % cmd)
+                try:
+                    os.system(cmd)
+                except:
+                    print("Unabled to Restore Device!")
+                    os.system(fr + " --exit-recovery")
+                    sys.exit(-1)
+
 else:
     parser.print_help()
