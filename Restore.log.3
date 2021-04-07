@@ -1,0 +1,669 @@
+$ Python ./RestoreMe.py -u -r 
+-- Requesting Devices.json From Remote --
+-- Success Code 200 , Got Devices.json --  
+
+RestoreMe v1.1 by Kasiimh1
+
+[*] Press ENTER when Device is connected > 
+Telling device with udid 00008020- to enter recovery mode.
+Device is successfully switching to recovery mode.    
+[*] enter iOS version you will be futurerestoring to: 14.3
+-- Server Response --
+[V] iOS 14.4.2 is currently being signed for the: iPhone11,2
+
+-- IPSW found for your version, downloading --
+  http://updates-http.cdn-apple.com/2020WinterFCS/fullrestores/001-87493/276DDA26-A771-413E-8BAF-FD7409E1897C/iPhone11,2,iPhone11,4,iPhone11,6,iPhone12,3,iPhone12,5_14.3_18C66_Restore.ipsw
+
+Downloading, SEP, Baseband and Buildmanifest
+No device found with udid 00008020-000334CE3C88002E.
+Enter path to SHSH Ticket for the device you wish to restore: "C:\Users\Kasiim\Desktop\SaveMe-Tickets\14.3\_iPhone11,2_d321ap_14.3-18C66_b5c76e624a5eac1d184953190942090e496b948bd9fe1ea1ef88589eb119a350.shsh2"
+Update Parameter Set Not Performing FDR, Continue ? y/n: y
+Version: 0ab9df3209ee599f581532d05d331e6abe0f53f3 - 194
+img4tool version: 0.197-aca6cf005c94caf135023263cbb5c61a0081804f
+Odysseus support: no
+INFO: device serial number is DNPX7ET8KPG3
+[INFO] 64-bit device detected
+futurerestore init done
+reading signing ticket C:\Users\Kasiim\Desktop\SaveMe-Tickets\14.3\_iPhone11,2_d321ap_14.3-18C66_b5c76e624a5eac1d184953190942090e496b948bd9fe1ea1ef88589eb119a350.shsh2 is done
+[TSSC] opening C:\Users\Kasiim/Desktop/RestoreMe/Files/BuildManifest.plist
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] User specified to not request a baseband ticket.
+Request URL set to https://gs.apple.com/TSS/controller?action=2
+Sending TSS request attempt 1... response successfully received
+Did set SEP+baseband path and firmware
+ERROR: Unable to get FirmwarePreflightInfo
+[WARNING] failed to read BasebandGoldCertID from device! Is it already in recovery?
+[WARNING] using tsschecker's fallback to get BasebandGoldCertID. This might result in invalid baseband signing status information
+[TSSC] opening C:\Users\Kasiim/Desktop/RestoreMe/Files/BuildManifest.plist
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] User specified to request only a Baseband ticket.
+Request URL set to https://gs.apple.com/TSS/controller?action=2
+Sending TSS request attempt 1... response successfully received
+Downloading the latest firmware components...
+[TSSC] opening firmwares.json
+[DOWN] downloading file https://api.ipsw.me/v2.1/firmwares.json/condensed
+[TSSC] selecting latest firmware version: 14.4.2
+[TSSC] got firmwareurl for iOS 14.4.2 build 18D70
+100 [===================================================================================================>]
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+downloading SE firmware
+100 [===================================================================================================>]
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+downloading Savage,B0-Dev-Patch
+100 [===================================================================================================>]
+downloading Savage,B0-Dev-PatchVT
+100 [===================================================================================================>]
+downloading Savage,B0-Prod-Patch
+100 [===================================================================================================>]
+downloading Savage,B0-Prod-PatchVT
+100 [===================================================================================================>]
+downloading Savage,B2-Dev-Patch
+100 [===================================================================================================>]
+downloading Savage,B2-Dev-PatchV
+100 [===================================================================================================>]
+downloading Savage,B2-Prod-Patch
+100 [===================================================================================================>]
+downloading Savage,B2-Prod-PatchVT
+100 [===================================================================================================>]
+downloading Savage,BA-Dev-Patch
+100 [===================================================================================================>]
+downloading Savage,BA-Prod-Patch
+100 [===================================================================================================>]
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Selected BuildIdentity for request
+Finished downloading the latest firmware components!
+Found device in Recovery mode
+Device already in recovery mode
+Found device in Recovery mode
+Identified device as d321ap, iPhone11,2
+Extracting BuildManifest from iPSW
+Product version: 14.3
+Product build: 18C66 Major: 18
+Device supports Image4: true
+Got ApNonce from device: b5 c7 6e 62 4a 5e ac 1d 18 49 53 19 09 42 09 0e 49 6b 94 8b d9 fe 1e a1 ef 88 58 9e b1 19 a3 50
+[TSSR] Checking BuildIdentity 0
+[TSSR] Checking BuildIdentity 1
+[TSSR] Checking BuildIdentity 2
+[TSSR] Checking BuildIdentity 3
+[TSSR] Checking BuildIdentity 4
+[TSSR] Checking BuildIdentity 5
+[TSSR] Selected BuildIdentity for request
+[TSSR] Checking BuildIdentity 0
+[TSSR] Checking BuildIdentity 1
+[TSSR] Checking BuildIdentity 2
+[TSSR] Checking BuildIdentity 3
+[TSSR] Checking BuildIdentity 4
+[TSSR] Checking BuildIdentity 5
+[TSSR] Selected BuildIdentity for request
+checking APTicket to be valid for this restore...
+Verified ECID in APTicket matches device ECID
+checking APTicket to be valid for this restore...
+Verified ECID in APTicket matches device ECID
+[IMG4TOOL] checking buildidentity 0:
+[IMG4TOOL] checking buildidentity matches board ... YES
+[IMG4TOOL] checking buildidentity has all required hashes:
+[IMG4TOOL] checking hash for "ANE"                     OK (found "anef" with matching hash)
+[IMG4TOOL] checking hash for "AOP"                     OK (found "aopf" with matching hash)
+[IMG4TOOL] checking hash for "AVE"                     OK (found "avef" with matching hash)
+[IMG4TOOL] checking hash for "Ap,HapticAssets"         OK (untrusted)
+[IMG4TOOL] checking hash for "Ap,SystemVolumeCanonicalMetadata"OK (found "msys" with matching hash)
+[IMG4TOOL] checking hash for "AppleLogo"               OK (found "logo" with matching hash)
+[IMG4TOOL] checking hash for "AudioCodecFirmware"      OK (untrusted)
+[IMG4TOOL] checking hash for "BasebandFirmware"        IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "BatteryCharging0"        OK (found "chg0" with matching hash)
+[IMG4TOOL] checking hash for "BatteryCharging1"        OK (found "chg1" with matching hash)
+[IMG4TOOL] checking hash for "BatteryFull"             OK (found "batF" with matching hash)
+[IMG4TOOL] checking hash for "BatteryLow0"             OK (found "bat0" with matching hash)
+[IMG4TOOL] checking hash for "BatteryLow1"             OK (found "bat1" with matching hash)
+[IMG4TOOL] checking hash for "BatteryPlugin"           OK (found "glyP" with matching hash)
+[IMG4TOOL] checking hash for "DeviceTree"              OK (found "dtre" with matching hash)
+[IMG4TOOL] checking hash for "GFX"                     OK (found "gfxf" with matching hash)
+[IMG4TOOL] checking hash for "ISP"                     OK (found "ispf" with matching hash)
+[IMG4TOOL] checking hash for "KernelCache"             OK (found "krnl" with matching hash)
+[IMG4TOOL] checking hash for "LLB"                     OK (found "illb" with matching hash)
+[IMG4TOOL] checking hash for "Liquid"                  OK (found "liqd" with matching hash)
+[IMG4TOOL] checking hash for "LowPowerWallet0"         OK (found "lpw0" with matching hash)
+[IMG4TOOL] checking hash for "Multitouch"              OK (untrusted)
+[IMG4TOOL] checking hash for "OS"                      OK (found "rosi" with matching hash)
+[IMG4TOOL] checking hash for "RecoveryMode"            OK (found "recm" with matching hash)
+[IMG4TOOL] checking hash for "RestoreDeviceTree"       OK (found "rdtr" with matching hash)
+[IMG4TOOL] checking hash for "RestoreKernelCache"      OK (found "rkrn" with matching hash)
+[IMG4TOOL] checking hash for "RestoreLogo"             OK (found "rlgo" with matching hash)
+[IMG4TOOL] checking hash for "RestoreRamDisk"          BAD! (hash not found in im4m)
+[IMG4TOOL] checking hash for "RestoreSEP"              OK (found "rsep" with matching hash)
+[IMG4TOOL] checking hash for "RestoreTrustCache"       BAD! (hash not found in im4m)
+[IMG4TOOL] checking hash for "SE,UpdatePayload"        IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "SEP"                     OK (found "sepi" with matching hash)
+[IMG4TOOL] checking hash for "SIO"                     OK (found "siof" with matching hash)
+[IMG4TOOL] checking hash for "Savage,B0-Dev-Patch"     IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,B0-Dev-PatchVT"   IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,B0-Prod-Patch"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,B0-Prod-PatchVT"  IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,B2-Dev-Patch"     IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,B2-Dev-PatchVT"   IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,B2-Prod-Patch"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,B2-Prod-PatchVT"  IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,BA-Dev-Patch"     IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,BA-Prod-Patch"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "StaticTrustCache"        OK (found "trst" with matching hash)
+[IMG4TOOL] checking hash for "SystemVolume"            OK (found "isys" with matching hash)
+[IMG4TOOL] checking hash for "WCHFirmwareUpdater"      OK (found "wchf" with matching hash)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch0"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch1"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch2"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch3"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch4"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch5"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch6"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch7"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch8"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch9"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatchA"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatchB"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "eUICC,Gold"              IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "eUICC,Main"              IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "ftap"                    IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "ftsp"                    IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "iBEC"                    OK (found "ibec" with matching hash)
+[IMG4TOOL] checking hash for "iBSS"                    OK (found "ibss" with matching hash)
+[IMG4TOOL] checking hash for "iBoot"                   OK (found "ibot" with matching hash)
+[IMG4TOOL] checking hash for "rfta"                    IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "rfts"                    IGN (no digest in BuildManifest)
+
+failed verification with error:
+[exception]:
+what=verification failed!
+code=84279308
+line=1286
+file=img4tool.cpp
+commit count=197:
+commit sha  =aca6cf005c94caf135023263cbb5c61a0081804f:
+[IMG4TOOL] checking buildidentity 1:
+[IMG4TOOL] checking buildidentity matches board ... NO
+[IMG4TOOL] checking buildidentity 2:
+[IMG4TOOL] checking buildidentity matches board ... NO
+[IMG4TOOL] checking buildidentity 3:
+[IMG4TOOL] checking buildidentity matches board ... NO
+[IMG4TOOL] checking buildidentity 4:
+[IMG4TOOL] checking buildidentity matches board ... NO
+[IMG4TOOL] checking buildidentity 5:
+[IMG4TOOL] checking buildidentity matches board ... YES
+[IMG4TOOL] checking buildidentity has all required hashes:
+[IMG4TOOL] checking hash for "ANE"                     OK (found "anef" with matching hash)
+[IMG4TOOL] checking hash for "AOP"                     OK (found "aopf" with matching hash)
+[IMG4TOOL] checking hash for "AVE"                     OK (found "avef" with matching hash)
+[IMG4TOOL] checking hash for "Ap,HapticAssets"         OK (untrusted)
+[IMG4TOOL] checking hash for "Ap,SystemVolumeCanonicalMetadata"OK (found "msys" with matching hash)
+[IMG4TOOL] checking hash for "AppleLogo"               OK (found "logo" with matching hash)
+[IMG4TOOL] checking hash for "AudioCodecFirmware"      OK (untrusted)
+[IMG4TOOL] checking hash for "BasebandFirmware"        IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "BatteryCharging0"        OK (found "chg0" with matching hash)
+[IMG4TOOL] checking hash for "BatteryCharging1"        OK (found "chg1" with matching hash)
+[IMG4TOOL] checking hash for "BatteryFull"             OK (found "batF" with matching hash)
+[IMG4TOOL] checking hash for "BatteryLow0"             OK (found "bat0" with matching hash)
+[IMG4TOOL] checking hash for "BatteryLow1"             OK (found "bat1" with matching hash)
+[IMG4TOOL] checking hash for "BatteryPlugin"           OK (found "glyP" with matching hash)
+[IMG4TOOL] checking hash for "DeviceTree"              OK (found "dtre" with matching hash)
+[IMG4TOOL] checking hash for "GFX"                     OK (found "gfxf" with matching hash)
+[IMG4TOOL] checking hash for "ISP"                     OK (found "ispf" with matching hash)
+[IMG4TOOL] checking hash for "KernelCache"             OK (found "krnl" with matching hash)
+[IMG4TOOL] checking hash for "LLB"                     OK (found "illb" with matching hash)
+[IMG4TOOL] checking hash for "Liquid"                  OK (found "liqd" with matching hash)
+[IMG4TOOL] checking hash for "LowPowerWallet0"         OK (found "lpw0" with matching hash)
+[IMG4TOOL] checking hash for "Multitouch"              OK (untrusted)
+[IMG4TOOL] checking hash for "OS"                      OK (found "rosi" with matching hash)
+[IMG4TOOL] checking hash for "RecoveryMode"            OK (found "recm" with matching hash)
+[IMG4TOOL] checking hash for "RestoreDeviceTree"       OK (found "rdtr" with matching hash)
+[IMG4TOOL] checking hash for "RestoreKernelCache"      OK (found "rkrn" with matching hash)
+[IMG4TOOL] checking hash for "RestoreLogo"             OK (found "rlgo" with matching hash)
+[IMG4TOOL] checking hash for "RestoreRamDisk"          OK (found "rdsk" with matching hash)
+[IMG4TOOL] checking hash for "RestoreSEP"              OK (found "rsep" with matching hash)
+[IMG4TOOL] checking hash for "RestoreTrustCache"       OK (found "rtsc" with matching hash)
+[IMG4TOOL] checking hash for "SE,UpdatePayload"        IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "SEP"                     OK (found "sepi" with matching hash)
+[IMG4TOOL] checking hash for "SIO"                     OK (found "siof" with matching hash)
+[IMG4TOOL] checking hash for "Savage,B0-Dev-Patch"     IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,B0-Dev-PatchVT"   IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,B0-Prod-Patch"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,B0-Prod-PatchVT"  IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,B2-Dev-Patch"     IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,B2-Dev-PatchVT"   IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,B2-Prod-Patch"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,B2-Prod-PatchVT"  IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,BA-Dev-Patch"     IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Savage,BA-Prod-Patch"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "StaticTrustCache"        OK (found "trst" with matching hash)
+[IMG4TOOL] checking hash for "SystemVolume"            OK (found "isys" with matching hash)
+[IMG4TOOL] checking hash for "WCHFirmwareUpdater"      OK (found "wchf" with matching hash)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch0"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch1"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch2"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch3"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch4"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch5"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch6"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch7"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch8"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatch9"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatchA"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "Yonkers,SysTopPatchB"    IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "eUICC,Gold"              IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "eUICC,Main"              IGN (hash not found in im4m, but ignoring since not explicitly enforced through "Trusted"="YES" tag)
+[IMG4TOOL] checking hash for "ftap"                    IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "ftsp"                    IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "iBEC"                    OK (found "ibec" with matching hash)
+[IMG4TOOL] checking hash for "iBSS"                    OK (found "ibss" with matching hash)
+[IMG4TOOL] checking hash for "iBoot"                   OK (found "ibot" with matching hash)
+[IMG4TOOL] checking hash for "rfta"                    IGN (no digest in BuildManifest)
+[IMG4TOOL] checking hash for "rfts"                    IGN (no digest in BuildManifest)
+Verified APTicket to be valid for this restore
+[TSSR] Checking BuildIdentity 0
+[TSSR] Checking BuildIdentity 1
+[TSSR] Checking BuildIdentity 2
+[TSSR] Checking BuildIdentity 3
+[TSSR] Checking BuildIdentity 4
+[TSSR] Checking BuildIdentity 5
+[TSSR] Selected BuildIdentity for request
+Variant: Customer Upgrade Install (IPSW)
+This restore will update your device without erasing user data.
+Using cached filesystem from 'C:\Users\Kasiim/Desktop/RestoreMe/iPhone11,2_14.3/038-83051-078.dmg'
+Extracting iBEC.d321.RELEASE.im4p...
+Personalizing IMG4 component iBEC...
+Sending iBEC (1193387 bytes)...
+waiting for device to reconnect... Getting SepNonce in recovery mode... 03 1e f8 76 22 26 5d a0 4e 62 ac b8 47 6b 14 a9 c3 e9 b3 48 
+Getting ApNonce in recovery mode... b5 c7 6e 62 4a 5e ac 1d 18 49 53 19 09 42 09 0e 49 6b 94 8b d9 fe 1e a1 ef 88 58 9e b1 19 a3 50 
+[WARNING] Setting bgcolor to green! If you don't see a green screen, then your device didn't boot iBEC correctly
+Recovery Mode Environment:
+iBoot build-version=iBoot-6723.62.3
+iBoot build-style=RELEASE
+Sending RestoreLogo...
+Extracting applelogo@3x~iphone.im4p...
+Personalizing IMG4 component RestoreLogo...
+Sending RestoreLogo (21473 bytes)...
+ramdisk-size=0x20000000
+Extracting 038-83019-083.dmg...
+Personalizing IMG4 component RestoreRamDisk...
+Sending RestoreRamDisk (109478464 bytes)...
+Extracting h11_ane_fw_quin.im4p...
+Personalizing IMG4 component ANE...
+Sending ANE (2868341 bytes)...
+Extracting aopfw-iphone11aop.im4p...
+Personalizing IMG4 component AOP...
+Sending AOP (1732669 bytes)...
+Extracting AppleAVE2FW_H11.im4p...
+Personalizing IMG4 component AVE...
+Sending AVE (1131821 bytes)...
+Extracting armfw_g11p.im4p...
+Personalizing IMG4 component GFX...
+Sending GFX (865421 bytes)...
+Extracting adc-petra-d3x.im4p...
+Personalizing IMG4 component ISP...
+Sending ISP (8731773 bytes)...
+Extracting 038-83019-083.dmg.trustcache...
+Personalizing IMG4 component RestoreTrustCache...
+Sending RestoreTrustCache (13334 bytes)...
+Extracting SmartIOFirmware_ASCv2.im4p...
+Personalizing IMG4 component SIO...
+Sending SIO (1161081 bytes)...
+Extracting WirelessPower.iphone11.im4p...
+Personalizing IMG4 component WCHFirmwareUpdater...
+Sending WCHFirmwareUpdater (26828 bytes)...
+Extracting DeviceTree.d321ap.im4p...
+Personalizing IMG4 component RestoreDeviceTree...
+Sending RestoreDeviceTree (43256 bytes)...
+Extracting sep-firmware.d321.RELEASE.im4p...
+Personalizing IMG4 component RestoreSEP...
+Sending RestoreSEP (7561512 bytes)...
+Extracting kernelcache.release.iphone11...
+Personalizing IMG4 component RestoreKernelCache...
+Sending RestoreKernelCache (15642797 bytes)...
+getting SEP ticket
+Trying to fetch new SHSH blob
+Request URL set to https://gs.apple.com/TSS/controller?action=2
+Sending TSS request attempt 1... response successfully received
+Received SHSH blobs
+About to restore device... 
+Connecting now...
+Connected to com.apple.mobile.restored, version 15
+Device 00008020- has successfully entered restore mode
+Hardware Information:
+BoardID: 14
+ChipID: 
+UniqueChipID: 
+ProductionMode: true
+Starting FDR listener thread
+About to send RootTicket...
+Sending RootTicket now...
+Done sending RootTicket
+Waiting for NAND (28)
+Updating NAND Firmware (58)
+About to send NORData...
+Found firmware path Firmware/all_flash
+Getting firmware manifest from build identity
+Extracting LLB.d321.RELEASE.im4p...
+Personalizing IMG4 component LLB...
+Extracting applelogo@3x~iphone.im4p...
+Personalizing IMG4 component AppleLogo...
+Extracting batterycharging0@3x~iphone.im4p...
+Personalizing IMG4 component BatteryCharging0...
+Extracting batterycharging1@3x~iphone.im4p...
+Personalizing IMG4 component BatteryCharging1...
+Extracting batteryfull@3x~iphone.im4p...
+Personalizing IMG4 component BatteryFull...
+Extracting batterylow0@3x~iphone.im4p...
+Personalizing IMG4 component BatteryLow0...
+Extracting batterylow1@3x~iphone.im4p...
+Personalizing IMG4 component BatteryLow1...
+Extracting glyphplugin@2436~iphone-lightning.im4p...
+Personalizing IMG4 component BatteryPlugin...
+Extracting DeviceTree.d321ap.im4p...
+Personalizing IMG4 component DeviceTree...
+Extracting liquiddetect@2436~iphone-lightning.im4p...
+Personalizing IMG4 component Liquid...
+Extracting lowpowermode@2436~iphone-lightning.im4p...
+Personalizing IMG4 component LowPowerWallet0...
+Extracting recoverymode@2436~iphone-lightning.im4p...
+Personalizing IMG4 component RecoveryMode...
+Extracting WirelessPower.iphone11.im4p...
+Personalizing IMG4 component WCHFirmwareUpdater...
+Extracting iBoot.d321.RELEASE.im4p...
+Personalizing IMG4 component iBoot...
+Personalizing IMG4 component RestoreSEP...
+Personalizing IMG4 component SEP...
+Sending NORData now...
+Done sending NORData
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Checking filesystems (15)
+About to send FDR Trust data...
+Sending FDR Trust data now...
+Done sending FDR Trust Data
+Checking for uncollected logs (44)
+Checking for uncollected logs (44)
+ERROR: Unable to receive message from FDR 0000000004622e60 (-2). 0/2 bytes
+ERROR: Unable to receive message from FDR 0000000004622e00 (-2). 0/2 bytes
+ERROR: Unable to receive message from FDR 0000000004622d60 (-2). 0/2 bytes
+ERROR: Unable to receive message from FDR 0000000004622d00 (-2). 0/2 bytes
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Creating filesystem (12)
+About to send filesystem...
+Connected to ASR
+Validating the filesystem
+Filesystem validated
+Sending filesystem now...
+Done sending filesystem
+Verifying restore (14)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Checking filesystems (15)
+Checking filesystems (15)
+Checking filesystems (15)
+Checking filesystems (15)
+Checking filesystems (15)
+Checking filesystems (15)
+Mounting filesystems (16)
+Mounting filesystems (16)
+Mounting filesystems (16)
+Mounting filesystems (16)
+Unknown operation (80)
+Sending IsiBootEANFirmware image list
+Sending IsiBootNonEssentialFirmware image list
+Flashing firmware (18)
+Unknown operation (80)
+Sending IsEarlyAccessFirmware image list
+Sending IsiBootEANFirmware image list
+Sending IsiBootNonEssentialFirmware image list
+Requesting FUD data (36)
+Found IsFUDFirmware component ANE
+Found IsFUDFirmware component AOP
+Found IsFUDFirmware component AVE
+Found IsFUDFirmware component Ap,HapticAssets
+Found IsFUDFirmware component AudioCodecFirmware
+Found IsFUDFirmware component GFX
+Found IsFUDFirmware component ISP
+Found IsFUDFirmware component Multitouch
+Found IsFUDFirmware component RestoreTrustCache
+Found IsFUDFirmware component SIO
+Found IsFUDFirmware component StaticTrustCache
+Sending IsFUDFirmware image list
+Extracting h11_ane_fw_quin.im4p...
+Personalizing IMG4 component ANE...
+Sending IsFUDFirmware for ANE...
+Extracting aopfw-iphone11aop.im4p...
+Personalizing IMG4 component AOP...
+Sending IsFUDFirmware for AOP...
+Extracting AppleAVE2FW_H11.im4p...
+Personalizing IMG4 component AVE...
+Sending IsFUDFirmware for AVE...
+Extracting D321_HapticAssets.im4p...
+Personalizing IMG4 component Ap,HapticAssets...
+Sending IsFUDFirmware for Ap,HapticAssets...
+Extracting D321_CallanFirmware.im4p...
+Personalizing IMG4 component AudioCodecFirmware...
+Sending IsFUDFirmware for AudioCodecFirmware...
+Extracting armfw_g11p.im4p...
+Personalizing IMG4 component GFX...
+Sending IsFUDFirmware for GFX...
+Extracting adc-petra-d3x.im4p...
+Personalizing IMG4 component ISP...
+Sending IsFUDFirmware for ISP...
+Extracting D321_Multitouch.im4p...
+Personalizing IMG4 component Multitouch...
+Sending IsFUDFirmware for Multitouch...
+Extracting 038-83019-083.dmg.trustcache...
+Personalizing IMG4 component RestoreTrustCache...
+Sending IsFUDFirmware for RestoreTrustCache...
+Extracting SmartIOFirmware_ASCv2.im4p...
+Personalizing IMG4 component SIO...
+Sending IsFUDFirmware for SIO...
+Extracting 038-83051-078.dmg.trustcache...
+Personalizing IMG4 component StaticTrustCache...
+Sending IsFUDFirmware for StaticTrustCache...
+Updating gas gauge software (47)
+Updating gas gauge software (47)
+Updating Stockholm (55)
+Requesting FUD data (36)
+Found IsFUDFirmware component ANE
+Found IsFUDFirmware component AOP
+Found IsFUDFirmware component AVE
+Found IsFUDFirmware component Ap,HapticAssets
+Found IsFUDFirmware component AudioCodecFirmware
+Found IsFUDFirmware component GFX
+Found IsFUDFirmware component ISP
+Found IsFUDFirmware component Multitouch
+Found IsFUDFirmware component RestoreTrustCache
+Found IsFUDFirmware component SIO
+Found IsFUDFirmware component StaticTrustCache
+Sending IsFUDFirmware image list
+Updating baseband (19)
+About to send BasebandData...
+sending request without baseband nonce
+Sending Baseband TSS request...
+Request URL set to https://gs.apple.com/TSS/controller?action=2
+Sending TSS request attempt 1... response successfully received
+Received Baseband SHSH blobs
+WARNING: size mismatch when parsing MBN file. Continuing anyway.
+WARNING: size mismatch when parsing MBN file. Continuing anyway.
+Sending BasebandData now...
+Done sending BasebandData
+Updating Baseband in progress...
+About to send BasebandData...
+Sending Baseband TSS request...
+Request URL set to https://gs.apple.com/TSS/controller?action=2
+Sending TSS request attempt 1... response successfully received
+Received Baseband SHSH blobs
+WARNING: size mismatch when parsing MBN file. Continuing anyway.
+WARNING: size mismatch when parsing MBN file. Continuing anyway.
+Sending BasebandData now...
+Done sending BasebandData
+Updating Baseband completed.
+Updating SE Firmware (59)
+Sending SE TSS request...
+Request URL set to https://gs.apple.com/TSS/controller?action=2
+Sending TSS request attempt 1... response successfully received
+Received SE ticket
+Extracting Stockholm5.RELEASE.sefw...
+Sending FirmwareResponse data now...
+Done sending FirmwareUpdater data
+Updating Savage (60)
+Sending Savage TSS request...
+Request URL set to https://gs.apple.com/TSS/controller?action=2
+Sending TSS request attempt 1... response successfully received
+Received Savage ticket
+Extracting Savage.B2-Prod.fw...
+Sending FirmwareResponse data now...
+Done sending FirmwareUpdater data
+Sending Yonkers TSS request...
+Request URL set to https://gs.apple.com/TSS/controller?action=2
+Sending TSS request attempt 1... response successfully received
+Received Yonkers ticket
+Extracting Yonkers.1A01_2A01_2201_3201_Prod.fw...
+Sending FirmwareResponse data now...
+Done sending FirmwareUpdater data
+Updating Veridian (66)
+Unknown operation (81)
+Creating Protected Volume (67)
+About to send KernelCache...
+Extracting kernelcache.release.iphone11...
+Personalizing IMG4 component KernelCache...
+Sending KernelCache now...
+Done sending KernelCache
+Installing kernelcache (27)
+About to send DeviceTree...
+Extracting DeviceTree.d321ap.im4p...
+Personalizing IMG4 component DeviceTree...
+Sending DeviceTree now...
+Done sending DeviceTree
+Installing DeviceTree (61)
+About to send NORData...
+Found firmware path Firmware/all_flash
+Getting firmware manifest from build identity
+Extracting LLB.d321.RELEASE.im4p...
+Personalizing IMG4 component LLB...
+Extracting applelogo@3x~iphone.im4p...
+Personalizing IMG4 component AppleLogo...
+Extracting batterycharging0@3x~iphone.im4p...
+Personalizing IMG4 component BatteryCharging0...
+Extracting batterycharging1@3x~iphone.im4p...
+Personalizing IMG4 component BatteryCharging1...
+Extracting batteryfull@3x~iphone.im4p...
+Personalizing IMG4 component BatteryFull...
+Extracting batterylow0@3x~iphone.im4p...
+Personalizing IMG4 component BatteryLow0...
+Extracting batterylow1@3x~iphone.im4p...
+Personalizing IMG4 component BatteryLow1...
+Extracting glyphplugin@2436~iphone-lightning.im4p...
+Personalizing IMG4 component BatteryPlugin...
+Extracting DeviceTree.d321ap.im4p...
+Personalizing IMG4 component DeviceTree...
+Extracting liquiddetect@2436~iphone-lightning.im4p...
+Personalizing IMG4 component Liquid...
+Extracting lowpowermode@2436~iphone-lightning.im4p...
+Personalizing IMG4 component LowPowerWallet0...
+Extracting recoverymode@2436~iphone-lightning.im4p...
+Personalizing IMG4 component RecoveryMode...
+Extracting WirelessPower.iphone11.im4p...
+Personalizing IMG4 component WCHFirmwareUpdater...
+Extracting iBoot.d321.RELEASE.im4p...
+Personalizing IMG4 component iBoot...
+Personalizing IMG4 component RestoreSEP...
+Personalizing IMG4 component SEP...
+Sending NORData now...
+Done sending NORData
+About to send SystemImageRootHash...
+Extracting 038-83051-078.dmg.root_hash...
+Personalizing IMG4 component SystemVolume...
+Sending SystemImageRootHash now...
+Done sending SystemImageRootHash
+Fixing up /var (17)
+Modifying persistent boot-args (25)
+Updating Savage (60)
+Updating Savage (60)
+Requesting EAN Data (74)
+About to send SystemImageCanonicalMetadata...
+Extracting 038-83051-078.dmg.mtree...
+Personalizing IMG4 component Ap,SystemVolumeCanonicalMetadata...
+Sending SystemImageCanonicalMetadata now...
+Done sending SystemImageCanonicalMetadata
+About to send SystemImageRootHash...
+Extracting 038-83051-078.dmg.root_hash...
+Personalizing IMG4 component SystemVolume...
+Sending SystemImageRootHash now...
+Done sending SystemImageRootHash
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Unmounting filesystems (29)
+Got status message
+Status: Restore Finished
+Cleaning up...
+Done: restoring succeeded!
