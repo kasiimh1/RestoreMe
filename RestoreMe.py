@@ -332,6 +332,7 @@ if args.r:
                         print("[DEBUG] %s " % cmd)
                     try:
                         os.system(cmd)
+                        print(cmd)
                     except:
                         print("Unabled to Restore Device!")
                         os.system(fr + " --exit-recovery")
@@ -355,6 +356,7 @@ if args.r:
                     print("[DEBUG] %s " % cmd)
                 try:
                     os.system(cmd)
+                    print(cmd)
                 except:
                     print("Unabled to Restore Device!")
                     os.system(fr + " --exit-recovery")
