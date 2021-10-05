@@ -31,6 +31,17 @@ if req.status_code == 200:
     print("-- Success Code %s " % req.status_code + ", Got Devices.json --")
     data = json.loads(req.text)
 
+def printBasebandFW(product, signed):
+    with RemoteZip(data["Devices"][product]["Firmwares"][0][signed][0]["IPSW"]) as zip:
+        print("\nListing Signed Baseband Files within, ", data["Devices"][product]["Firmwares"][0][signed][0]["IPSW"] , "firmware file")
+        try:
+            for j in zip.namelist():
+                if j.endswith('.bbfw'):
+                    print(j)
+        except:
+            print(
+                "\n-- Baseband not found!.. fine if device is an iPad/iPod --\n"
+            )
 
 def download(url, path, version, product, log):
     file = os.path.expanduser(path)
@@ -180,6 +191,7 @@ if platform == "Windows":
             os.path.join(os.environ["USERPROFILE"]), "Desktop/RestoreMe"
         ),
     )
+parser.add_argument("-b", help="Print Baseband files for specific model", action="store_true")
 parser.add_argument("-c", help="Pair Device (fix lockdown errors)", action="store_true")
 parser.add_argument("-d", help="Download Restore Files Only", action="store_true")
 parser.add_argument("-e", help="Exit Recovery Mode", action="store_true")
@@ -265,6 +277,10 @@ if args.r:
 
     version = input("[*] enter iOS version you will be futurerestoring to: ")
     signed = signedVersionChecker(product, version, args.l)
+
+    if args.b:
+        printBasebandFW(product, signed)
+
     download(deviceLookup(product, version), args.p, version, product, args.l)
     restoreFileFetch(product, signed, args.p + "/Files/")
 
