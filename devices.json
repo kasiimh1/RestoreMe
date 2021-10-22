@@ -114,6 +114,13 @@
                             "SEP": "Firmware/all_flash/sep-firmware.d321.RELEASE.im4p",
                             "Baseband": "Firmware/ICE18-4.00.00.Release.bbfw"
                         }
+                    ],
+                    "15.0.2": [
+                        {
+                            "IPSW": "https://updates.cdn-apple.com/2021FCSFall/fullrestores/002-14647/3EADDD4D-D5F5-440F-B70A-56211B32222B/iPhone11,2,iPhone11,4,iPhone11,6,iPhone12,3,iPhone12,5_15.0.2_19A404_Restore.ipsw",
+                            "SEP": "Firmware/all_flash/sep-firmware.d321.RELEASE.im4p",
+                            "Baseband": "Firmware/ICE18-4.00.00.Release.bbfw"
+                        }
                     ]
                 }
             ]
