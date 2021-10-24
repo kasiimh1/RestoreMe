@@ -224,6 +224,12 @@
                             "IPSW": "https://updates.cdn-apple.com/2021FallFCS/fullrestores/002-09848/77AEDFC9-F883-43BB-81FE-981EBFA8926B/iPad_Pro_HFR_15.0.1_19A348_Restore.ipsw",
                             "SEP": "Firmware/all_flash/sep-firmware.j207.RELEASE.im4p"
                         }
+                    ],
+                    "15.0.2": [
+                        {
+                            "IPSW": "https://updates.cdn-apple.com/2021FCSFall/fullrestores/002-14455/612A575D-22F6-4BD9-8D14-F14FC3730817/iPad_Pro_HFR_15.0.2_19A404_Restore.ipsw",
+                            "SEP": "Firmware/all_flash/sep-firmware.j207.RELEASE.im4p"
+                        }
                     ]
                 }
             ]
